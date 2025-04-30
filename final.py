@@ -1,8 +1,9 @@
 class books():
     def __init__(self):
+        self.Author=""
         self.name="Henry"
         self.title=""
-        self.books={}
+        self.Books={}
         self.price=0
     def Add(self):
      self.title=input("what book would you add")
@@ -13,4 +14,17 @@ class books():
      self._Price=float(input("Enter the listing price of the book:\n"))
      self._Book[self.title]={'Author':self._Author, 'price':self._Price}
      print(self._Book)
-        
+
+    def sell(self):
+        self.name=input("enter the name of the book you sell")
+        try:
+          str(self.name)
+          if self.name in self.Books:
+             self.Book.pop(self.name)
+             print("the remaining book are:",self.Books)
+        except:
+           print("enter a book title")
+    def showbook(self):
+       for x in self.Books:
+          print(x)
+          print(f"{self.Author}:{self.price}")

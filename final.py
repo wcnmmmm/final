@@ -10,7 +10,7 @@ class books():
      print("You successly add", self.title)
     
      self._Name=input("enter the name of the book you would like to add:\n").upper
-     self._Author=input("enter the Author of the book youhave just added:\n").upper
+     self._Author=input("enter the Author of the book you have just added:\n").upper
      self._Price=float(input("Enter the listing price of the book:\n"))
      self._Book[self.title]={'Author':self._Author, 'price':self._Price}
      print(self._Book)
@@ -26,5 +26,6 @@ class books():
            print("enter a book title")
     def showbook(self):
        for x in self.Books:
-          print(x)
-          print(f"{self.Author}:{self.price}")
+          print(self.Books)[x]
+          print(self.Books)[x]['Author']
+          print(self.Books)[x]['price']

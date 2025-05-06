@@ -1,3 +1,4 @@
+import json
 class books():
     def __init__(self):
         self.Author=""
@@ -25,7 +26,17 @@ class books():
         except:
            print("enter a book title")
     def showbook(self):
-       for x in self.Books:
+        for x in self.Books:
           print(self.Books)[x]
           print(self.Books)[x]['Author']
           print(self.Books)[x]['price']
+    def save_to_file(self, filename):
+        try:
+            with open(filename, 'w', encoding='utf-8') as f:
+                json.dump(self.Books, f, indent=4)
+            print(f"Bookstore data saved to {filename}")
+        except Exception as e:
+            print(f"Error saving file: {e}")
+    
+
+

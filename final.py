@@ -85,9 +85,6 @@ class books:
             if lines[0].strip().upper() != "TITLE,AUTHOR,PRICE":
                 print(f"Error: File '{filename}' has an invalid format.")
                 return
-
-            self.Books.clear()
-
             for lineno, line in enumerate(lines[1:], start=2):
                 parts = line.strip().split(',')
                 if len(parts) != 3:
@@ -103,6 +100,7 @@ class books:
                     continue
                 self.Books[key] = {'author': auth, 'price': pr}
             print(f"Inventory loaded successfully from '{filename}'.")
+            print(self.title,self.name[key])
         except PermissionError:
             print(f"Error: Permission denied when trying to read '{filename}'.")
         except FileNotFoundError:
